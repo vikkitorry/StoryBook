@@ -1,7 +1,13 @@
 import { render } from "react-dom";
-import  classes from './index.module.scss';
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import ThemeProvider from "./theme/ThemeProvider";
 
-render (
-  <div className={classes.body}>dfdsddsrrrrrdsdf</div>,
-  document.getElementById('root')
-)
+render(
+  <BrowserRouter>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </BrowserRouter>,
+  document.getElementById("root")
+);
