@@ -10,7 +10,7 @@ import {classNames} from "./helpers/classNames/classNames";
 
 
 const App = () => {
-   const { theme, toggleTheme } = useTheme();
+    const { theme, toggleTheme } = useTheme();
     const bool = true;
     return (
         <div className={classNames('app', {}, [theme])}>
