@@ -9,8 +9,8 @@ const AppRouter = () => (
                 key={path}
                 path={path}
                 element={(
-                    <Suspense fallback={<div>Loading..</div>}>
-                    {element}
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <div className="page-wrapper">{element}</div>
                     </Suspense>
                 )}
             />
