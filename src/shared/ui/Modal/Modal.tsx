@@ -7,7 +7,6 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
-    className?: string;
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
@@ -17,7 +16,6 @@ const ANIMATION_DELAY = 300;
 
 export const Modal = (props: ModalProps) => {
     const {
-        className,
         children,
         isOpen,
         onClose,
@@ -61,12 +59,11 @@ export const Modal = (props: ModalProps) => {
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
-        [cls[theme]]: true,
     };
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
+            <div className={classNames(cls.Modal, mods, [theme])}>
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div
                         className={cls.content}
